@@ -28,7 +28,7 @@ const ContainerTransaction = styled.div `
     
   h5{
     position: absolute;
-    right: 0vw;
+    right: 5vw;
     width: 20vw;
     font-weight: normal;
     font-size: 16px;
@@ -36,6 +36,13 @@ const ContainerTransaction = styled.div `
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  div {
+    position: fixed;
+    right: 7vw;
+    font-weight: normal;
+    font-size: 16px;
   }
 `;
 
