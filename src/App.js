@@ -5,8 +5,9 @@ import { useState } from 'react';
 
 import SignInPage from './components/signIn/SignInPage.js';
 import UserContext from './contexts/UserContext.js';
-import SignUpPage from './components/signUp/SignUpPage';
-import PrincipalPage from './components/principal/PrincipalPage';
+import SignUpPage from './components/signUp/SignUpPage.js';
+import PrincipalPage from './components/principal/PrincipalPage.js';
+import NewIncomePage from './components/registration/NewIncomePage.js';
 
 function App() {
   const [user, setUser] = useState();
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<SignInPage/>} exact/>
           <Route path='/sign-up' element={<SignUpPage/>} exact/>
           <Route path='/principal' element={<PrincipalPage/>} exact/>
+          <Route path='/new-income' element={<NewIncomePage/>} exact/>
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

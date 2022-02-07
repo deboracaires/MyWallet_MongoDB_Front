@@ -49,14 +49,23 @@ export default function PrincipalPage() {
                 setTotal(res.data.total);
                 setText("Não há registros de entrada ou saída")
             })
-            .catch(() => {
-                Swal.fire({
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    Swal.fire({
                     html: `<h1 style = 'color: #fff'>Sessão expirada! Faça login novamente!</h1>`,
                     width: '95%',
                     background: '#8C11BE',
                     confirmButtonColor: '#A328D6',
                 });
                 navigate('/');
+               } else if (err.response.status === 500){ 
+                Swal.fire({
+                  html: `<h1 style = 'color: #fff'>Alguma erro não identificado ocorreu! Aguarde uns instantes e faça o login novamente!</h1>`,
+                  width: '95%',
+                  background: '#8C11BE',
+                  confirmButtonColor: '#A328D6',
+                });
+             }
             });
     }, [user, token, navigate]);
 

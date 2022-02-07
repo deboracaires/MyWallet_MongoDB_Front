@@ -14,8 +14,12 @@ function getFinancialEvents(config) {
   return axios.get(`${URL}/transactions`, config);
 }
 
+function postTransaction (body, config) {
+  return axios.post(`${URL}/transactions`, body, config);
+}
 export {
     postSignIn,
     postSignUp,
     getFinancialEvents,
+    postTransaction,
 }
