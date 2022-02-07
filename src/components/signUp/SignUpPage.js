@@ -37,7 +37,7 @@ export default function SignUpPage(){
                             background: '#8C11BE',
                             confirmButtonColor: '#A328D6',
                         });
-                    } else if (err.response.status === 400){ 
+                    } else if (err.response.status === 422){ 
                         Swal.fire({
                             html: `<h1 style = 'color: #fff'>Algum dado está inválido, tente novamente!</h1>`,
                             width: '95%',
