@@ -8,6 +8,7 @@ import UserContext from './contexts/UserContext.js';
 import SignUpPage from './components/signUp/SignUpPage.js';
 import PrincipalPage from './components/principal/PrincipalPage.js';
 import NewIncomePage from './components/registration/NewIncomePage.js';
+import NewOutcomePage from './components/registration/NewOutcomePage.js';
 
 function App() {
   const [user, setUser] = useState();
@@ -20,6 +21,7 @@ function App() {
           <Route path='/sign-up' element={<SignUpPage/>} exact/>
           <Route path='/principal' element={<PrincipalPage/>} exact/>
           <Route path='/new-income' element={<NewIncomePage/>} exact/>
+          <Route path='/new-outcome' element={<NewOutcomePage/>} exact/>
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

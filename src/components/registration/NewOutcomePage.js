@@ -6,7 +6,7 @@ import { postTransaction } from "../../services/api.services.js";
 import { ContainerRegister, HeaderRegister, Input, Button } from '../../styles/registersStyles.js';
 import { validateUser } from "../../validations/nameAndTokenValidation.js";
 
-export default function NewIncomePage(){
+export default function NewOutcomePage(){
     
     const [value, setValue] = useState("");
     const [description, setDescription] = useState("");
@@ -33,7 +33,7 @@ export default function NewIncomePage(){
     function saveTransaction(e){
         e.preventDefault();
         
-        const type = 'INCOME';
+        const type = 'OUTCOME';
 
         
         const config = { headers: { "Authorization": `Bearer ${user?user.token:token}` } }
@@ -78,12 +78,12 @@ export default function NewIncomePage(){
     return(
         <ContainerRegister>
             <HeaderRegister> 
-                <h1>Nova entrada</h1>
+                <h1>Nova saída</h1>
             </HeaderRegister>
             <form onSubmit={saveTransaction}>
                 <Input placeholder="Valor" type="number" min={0.00} step = {0.01}value={value} onChange={e => setValue(e.target.value)} ></Input>
                 <Input placeholder="Descrição" value={description} onChange={e => setDescription(e.target.value)}></Input>
-                <Button type="submit"> Salvar entrada</Button>
+                <Button type="submit"> Salvar saída</Button>
             </form>
         </ContainerRegister>
     );
