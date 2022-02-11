@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:5000';
+const URL = 'https://back-mywallet-mongodb.herokuapp.com';
 
 function postSignIn (body) {
   return axios.post(`${URL}/sign-in`, body);
